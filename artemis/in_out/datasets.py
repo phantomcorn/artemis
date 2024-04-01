@@ -26,7 +26,7 @@ class AffectiveCaptionDataset(Dataset):
         self.one_hot_emo = one_hot_emo
 
     def __getitem__(self, index):
-        text = np.array(self.tokens[index]).astype(dtype=np.long)
+        text = np.array(self.tokens[index]).astype(dtype=np.int_)
 
         if self.image_files is not None:
             img = Image.open(self.image_files[index])
