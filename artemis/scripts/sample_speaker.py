@@ -85,7 +85,7 @@ if __name__ == '__main__':
 
         captions_predicted, attn_weights = versatile_caption_sampler(speaker, annotate_loader, device, **config)
         df = captions_as_dataframe(annotate_loader.dataset, captions_predicted, wiki_art_data=not use_custom_dataset)
-        final_results.append([config, df, attn_weights])
+        final_results.append([config, df])
         print('Done.')
 
     pickle_data(args.out_file, final_results)
